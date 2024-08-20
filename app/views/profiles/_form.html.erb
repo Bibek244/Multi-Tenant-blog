@@ -1,0 +1,49 @@
+<%= form_with(model: profile) do |form| %>
+  <% if profile.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+        <% profile.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div>
+  profile : <%= profile.id%>
+    <%= form.label :avatar, style: "display: block" %>
+    <% if profile.avatar.attached? %>
+    <%= image_tag(profile.avatar || "default_avatar.png", size: "100x100") %>
+    <%end%>
+    <%= form.hidden_field :user, value: current_user.id , readonly: true %>
+    
+  </div>
+  <div>
+    <%= form.file_field :avatar %>
+  </div>
+  <div>
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= form.label :last_name, style: "display: block" %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email  , value: current_user.email , readonly: true%>
+  </div>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
