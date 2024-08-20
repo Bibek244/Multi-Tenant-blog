@@ -35,3 +35,4 @@ class RegistrationsController < Devise::RegistrationsController
     params.require(:user).permit(:email, :password, :password_confirmation)
   end
 end
+Ssdf
