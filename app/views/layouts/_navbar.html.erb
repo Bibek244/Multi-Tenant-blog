@@ -1,0 +1,27 @@
+<div class="about">
+    Look what top fuel marketers say about FleetPanda
+    <a href="#">Know More →</a>
+  </div>
+</header>
+<nav>
+  <div class="logo">
+  <%= link_to image_tag("fleedpanda-logo.png") ,root_path %>
+  </div>
+  <ul>
+    <li><%=link_to "Home", root_path %>
+    <%if !user_signed_in?%>
+    <li> <%= link_to "Login", new_user_session_path%> </li>
+    <li> <%= link_to "Register", new_user_registration_path %> </li>
+    <%elsif !current_user.memberships.empty?%>
+    <li><%= link_to "Profile", profile_path(current_user)%></li>
+    <li><%= link_to "Organizations",organizations_path%></li>
+    <li><%= link_to "Membership", organization_memberships_path(current_organization)%></li>
+    <li><%= link_to "Blogs", organization_posts_path(current_organization)%></li>
+    <li> <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete } %></li>
+    <%else%>
+    <li><%= link_to "Profile", profile_path(current_user)%></li>
+    <li><%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete } %></li>
+    <%end%>
+
+  </ul>
+  </nav>

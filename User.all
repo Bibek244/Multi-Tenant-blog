@@ -1,0 +1,29 @@
+=> 
+[[32m#<Membership:0x000071d71fada008[0m
+  id: [34m[1m47[0m,
+  user_id: [34m[1m87[0m,
+  organization_id: [34m[1m27[0m,
+  created_at: Fri, 16 Aug 2024 08:54:23.324184000 UTC +00:00,
+  updated_at: Fri, 16 Aug 2024 08:54:23.324184000 UTC +00:00,
+  is_admin: [36m[1mfalse[0m[32m>[0m,
+ [32m#<Membership:0x000071d71fad9d88[0m
+  id: [34m[1m48[0m,
+  user_id: [34m[1m89[0m,
+  organization_id: [34m[1m28[0m,
+  created_at: Fri, 16 Aug 2024 12:02:05.032112000 UTC +00:00,
+  updated_at: Fri, 16 Aug 2024 12:02:05.032112000 UTC +00:00,
+  is_admin: [36m[1mtrue[0m[32m>[0m,
+ [32m#<Membership:0x000071d71fad9c48[0m
+  id: [34m[1m49[0m,
+  user_id: [34m[1m90[0m,
+  organization_id: [34m[1m29[0m,
+  created_at: Sun, 18 Aug 2024 14:34:53.177536000 UTC +00:00,
+  updated_at: Sun, 18 Aug 2024 14:34:53.177536000 UTC +00:00,
+  is_admin: [36m[1mtrue[0m[32m>[0m,
+ [32m#<Membership:0x000071d71fad9b08[0m
+  id: [34m[1m50[0m,
+  user_id: [34m[1m91[0m,
+  organization_id: [34m[1m30[0m,
+  created_at: Sun, 18 Aug 2024 14:34:53.355383000 UTC +00:00,
+  updated_at: Sun, 18 Aug 2024 14:34:53.355383000 UTC +00:00,
+  is_admin: [36m[1mtrue[0m[32m>[0m]
