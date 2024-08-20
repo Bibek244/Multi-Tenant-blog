@@ -1,0 +1,5 @@
+<h1><%= @organization.name %></h1>
+
+<p>
+  <%= @email %>, you are invited to join <%= @organization.name%> at <%= link_to 'click here to Activate your account', new_user_registration_url(organization_id: @organization.id, organization_name: @organization.name, email: @email) %>
+</p>
