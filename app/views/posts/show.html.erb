@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+<button class='btn'><%= link_to "Back", organization_posts_path(@post.organization) %></button>
+<div class="post-container">
+      <div class="card-container">
+        <div class="card">
+     <!--     <span class="post-item" id = "post-user"></span> -->
+          <span class="post-item title" id="post-title"><%=@post.title%></span>
+          <span class="post-item" id="post-body"><%=@post.body%> </span>
+          
+        <span style="display: flex; justify-content:end; gap: 10px; padding:5px; margin:2px;">
+      <%= link_to 'Edit', edit_organization_post_path(@post.organization, @post), class:'btn' %>
+        <%= button_to 'delete', organization_post_path(@post.organization, @post),method: :delete, class: 'btn', style: "width: fit-content;",
+        data: { turbo_confirm: 'Are you sure?' }%></span>
+        </div>
+        <div id="comment-box">
+          <h2>Comments</h2>
+          <%= render @post.comments %> 
+        <%= render partial: 'comments/form', locals: {post: @post.id, organization: @organization}%> 
+        </div>
+      </div>
+    </div>
