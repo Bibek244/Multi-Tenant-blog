@@ -19,4 +19,3 @@ module InvitationsSender
       end
   end
 end
-asdfsd
