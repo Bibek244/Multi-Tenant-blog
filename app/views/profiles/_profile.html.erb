@@ -1,0 +1,33 @@
+<div id="<%= dom_id profile %>">
+  <%if profile.avatar.attached? %>
+  <% image = profile.avatar %>
+  <%else%>
+  <% image = "default.png" %>
+  <%end%>
+  <%= image_tag(image, size: "100x100") %>
+
+  <p>
+  <strong>Profile id:</strong>
+  <%= profile.id %>
+  </p>
+  <p>
+    <strong>First name:</strong>
+    <%= profile.first_name %>
+  </p>
+
+  <p>
+    <strong>Last name:</strong>
+    <%= profile.last_name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= profile.email %>
+  </p>
+
+  <p>
+    <strong>Address:</strong>
+    <%= profile.address %>
+  </p>
+
+</div>

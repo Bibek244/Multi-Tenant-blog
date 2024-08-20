@@ -1,0 +1,14 @@
+
+<%if authorize_admin%>
+<h2>Invite members</h2>
+<%= form_with url:organization_memberships_path do |form| %>
+  <%= form.text_field :email,palceholder: 'email' %>
+  <%= form.submit 'Invite'%>
+  <%end%>
+<%end%>
+
+<h2>Members of <%=@current_organization.name%></h2>
+
+<%@members.each do |member|%>
+  <%= member.email%>
+<%end%>

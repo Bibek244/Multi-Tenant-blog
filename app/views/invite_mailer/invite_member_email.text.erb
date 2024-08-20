@@ -1,0 +1,9 @@
+
+welcome, <%= @email %>
+===============================================
+
+You can successfully signed up to example.com,
+your username is: <%= @email %>.
+
+To login to the site, just follow this link: <%= "http://localhost:3000/users/sign_up?email=#{@email}&organization_id=#{@organization.id}&organization_name=#{@organization.name} "%>
+Thanks for joining and have a great day!

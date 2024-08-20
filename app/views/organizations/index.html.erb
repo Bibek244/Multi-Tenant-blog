@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Organizations</h1>
+
+<div id="organization">
+  <% @organizations.each do |organization| %>
+    <%=  organization.name %>
+    <p>
+      <%= link_to "Show this organization", organization%>
+      <%= link_to "Show posts of this organization", organization_posts_path(organization)%>
+    </p>
+  <% end %>
+</div>
+
+<%if authorize_su? %>
+<%= link_to "New Organization", new_organization_path %>
+<%end%>

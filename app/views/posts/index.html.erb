@@ -1,0 +1,26 @@
+<h1>Posts</h1>
+<%= link_to 'New Post',new_organization_post_path %>
+<%= link_to "Members", organization_memberships_path%>
+
+<div class= "result">
+<%if !@posts.nil?%>
+  <% @posts.each do |post| %>
+    <div class="cards">
+      <div class="sub-divs">
+        <span class="span-id">Post <%= post.class %></span>
+        <span class="span-title"><%= post.title%></span>
+        <span class="span-body"><%= post.body%>  </span>
+      </div>
+      <div>
+        <%= link_to 'Read More', organization_post_path(post.organization, post), class: 'btn'%>
+         <% if post.user == current_user %>
+        <%= link_to 'Edit', "#", class: 'btn'%>
+        <%= button_to 'delete',"#",method: :delete,
+        data: { turbo_confirm: 'Are you sure?' }, class: 'btn'%>
+        <%end%>
+      </div>
+   </div>
+   <% end %>
+   <% end %>
+   </div>
+    
