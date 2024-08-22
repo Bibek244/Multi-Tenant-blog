@@ -16,10 +16,10 @@ class MembershipsController < AuthorizedController
   end
 
   private
-
   def authorize_admin
     membership = Membership.find_by(user: current_user, organization: @current_organization)
      membership&.is_admin?
   end
   
+
 end
