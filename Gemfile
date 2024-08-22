@@ -52,7 +52,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  gem 'rspec-rails', '~> 6.1.0'
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -74,3 +74,4 @@ gem 'sidekiq-scheduler', '~> 5.0', '>= 5.0.6'
 gem 'devise_invitable', '~> 2.0', '>= 2.0.9'
 gem 'graphql', '~> 2.3', '>= 2.3.14'
 gem "graphiql-rails", group: :development
+gem 'rack-cors', '~> 2.0', '>= 2.0.2'
