@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
 
   private
   def current_organization
-    current_user.organizations.first if user_signed_in?
+    session[:organization_id] if user_signed_in?
   end
 end

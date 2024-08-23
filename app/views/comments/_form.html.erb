@@ -1,4 +1,6 @@
 <%= form_with(url: organization_post_comments_path(organization, post), method: :post, local: true) do |form| %>
+  
+<%= form.hidden_field :user_id, value: current_user.id, readonly: true %>
 <textarea class="comment-body" name="comment[body]" rows='3' cols="1" placeholder="comment..."></textarea>
 <input type= "submit" class="btn" value="Comment">
 <% end %>
