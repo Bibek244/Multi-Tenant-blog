@@ -6,6 +6,7 @@ class GraphqlController < ApplicationController
   # but you'll have to authenticate your user separately
   # protect_from_forgery with: :null_session
   skip_before_action :authenticate_user! 
+  
   def execute
      Rails.logger.info "GraphQL query received: #{params[:query]}"
     variables = prepare_variables(params[:variables])
