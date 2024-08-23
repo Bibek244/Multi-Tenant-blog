@@ -5,6 +5,8 @@
   <div class ="form-items">
   <h2>Log in</h2>
   </div>
+
+
   <div class="form-items">
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class: "input-tag"%>
@@ -13,6 +15,15 @@
   <div class="form-items">
     <%= f.label :password %>
     <%= f.password_field :password, autocomplete: "current-password",class: "input-tag" %>
+  </div>
+
+  <div class="form-items">
+    <%= f.label :organization_id, "Ogranziation" %>
+    <select name="organization_id", class = "input-tag">
+      <% Organization.all.each do |org|%>
+        <option value=<%=org.id%> ><%=org.name%></option>
+      <%end%>
+      </select>
   </div>
 
   <% if devise_mapping.rememberable? %>
