@@ -1,4 +1,4 @@
 <article class="comment">
-<small class="comment-username">dummy user </small>
-<div class ="comment-body"> <%= comment.content%> </div>
+<small class="comment-username"><%= Profile.find_by(user_id: comment.user_id).first_name + " " + Profile.find_by(user_id: comment.user_id).last_name%> </small>
+<div class ="comment-body"> <%= comment.body%> </div>
 </article>
