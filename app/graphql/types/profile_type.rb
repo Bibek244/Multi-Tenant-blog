@@ -10,5 +10,10 @@ module Types
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
     field :user_id, Integer, null: false
+    field :avatar_url, String, null: true
+  end
+
+  def avatar_url
+    Rails.application.routes.url_helpers.rails_blob_url(object.avatar, only_path: true) if object.avatar.attached?
   end
 end

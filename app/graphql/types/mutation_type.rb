@@ -8,7 +8,7 @@ module Types
     field :update_post, mutation: Mutations::UpdatePost
     field :invite_memeber, mutation: Mutations::InviteMember
     field :delete_post, mutation: Mutations::DeletePost
-    # field :create_profile, mutation: Mutations::CreateProfile
+    field :create_profile, mutation: Mutations::CreateProfile
     field :create_comment, mutation: Mutations::CreateComment
   end
 end
