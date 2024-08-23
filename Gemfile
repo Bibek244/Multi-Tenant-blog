@@ -75,5 +75,4 @@ gem 'devise_invitable', '~> 2.0', '>= 2.0.9'
 gem 'graphql', '~> 2.3', '>= 2.3.14'
 gem "graphiql-rails", group: :development
 gem 'rack-cors', '~> 2.0', '>= 2.0.2'
-
-
+gem 'apollo_upload_server', '~> 2.1', '>= 2.1.6'

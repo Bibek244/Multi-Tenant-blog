@@ -30,6 +30,7 @@ module Types
     field :organization, resolver: Resolvers::OrganizationResolver
     field :organizations, resolver: Resolvers::OrganizationsResolver
     field :membership, resolver: Resolvers::MembershipResolver
+    field :comments, resolver: Resolvers::CommentResolver
 
     # field :posts, [Types::PostType], null: false, description: "Fetch all posts"
     # def posts
