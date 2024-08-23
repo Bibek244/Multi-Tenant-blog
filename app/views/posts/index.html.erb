@@ -4,18 +4,19 @@
 
 <div class= "result">
 <%if !@posts.nil?%>
+<%i=1%>
   <% @posts.each do |post| %>
     <div class="cards">
       <div class="sub-divs">
-        <span class="span-id">Post <%= post.class %></span>
+        <span class="span-id">Post <%= i %><<%i+=1%>/span>
         <span class="span-title"><%= post.title%></span>
         <span class="span-body"><%= post.body%>  </span>
       </div>
       <div>
         <%= link_to 'Read More', organization_post_path(post.organization, post), class: 'btn'%>
          <% if post.user == current_user %>
-        <%= link_to 'Edit', "#", class: 'btn'%>
-        <%= button_to 'delete',"#",method: :delete,
+        <%= link_to 'Edit', edit_organization_post_path(post.organization, post), class: 'btn'%>
+        <%= button_to 'delete', organization_post_path(post.organization, post) ,method: :delete,
         data: { turbo_confirm: 'Are you sure?' }, class: 'btn'%>
         <%end%>
       </div>
