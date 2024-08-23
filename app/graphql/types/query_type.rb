@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Types
+  # require_relative 'resolvers/organizations_resolver'
   class QueryType < Types::BaseObject
     field :node, Types::NodeType, null: true, description: "Fetches an object given its ID." do
       argument :id, ID, required: true, description: "ID of the object."
@@ -27,7 +28,8 @@ module Types
     field :posts, resolver: Resolvers::PostsResolver
     field :profile, resolver: Resolvers::ProfileResolver
     field :organization, resolver: Resolvers::OrganizationResolver
-    field :memberhsip, resolver: Resolvers::MembershipResolver
+    field :organizations, resolver: Resolvers::OrganizationsResolver
+    field :membership, resolver: Resolvers::MembershipResolver
 
     # field :posts, [Types::PostType], null: false, description: "Fetch all posts"
     # def posts
