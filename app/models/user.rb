@@ -9,5 +9,5 @@ class User < ApplicationRecord
          has_many :organizations, through: :memberships
          has_many :posts, dependent: :destroy
          has_one :profile, dependent: :destroy
-        #  has_many :comments, dependent: :destory
+         has_many :comments, dependent: :destroy
 end

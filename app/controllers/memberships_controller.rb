@@ -9,10 +9,12 @@ class MembershipsController < AuthorizedController
   end
 
   def create
+
     @email = params[:email]
     puts @email
     @current_organization = Organization.find_by(id: params[:organization_id])
     return redirect_to organization_memberships_path(@current_organization) if @email.blank?
+
   end
 
   private

@@ -1,28 +1,24 @@
 class PostsController < AuthorizedController
   before_action :set_post, only: %i[show edit update destroy]
+  before_action :set_organization, only: %i[index new show edit create update destroy ]
   # before_action :authenticate_user!
   
   
   def index
-    @organization = Organization.find_by(id: params[:organization_id])
     @posts = @organization.posts 
   end
 
   def show
-    @organization = Organization.find(params[:organization_id])
   end
 
   def new
-    @organization = Organization.find_by(id: params[:organization_id])
     @post = @organization.posts.new 
   end
 
   def edit
-    @organization = Organization.find_by(id: params[:organization_id])
   end
 
   def create
-    @organization = Organization.find_by(id: params[:organization_id])
     @post = @organization.posts.new(post_params)
     @post.user = current_user  
       if @post.save
@@ -46,6 +42,10 @@ class PostsController < AuthorizedController
   end
 
   private
+
+  def set_organization
+    @organization = Organization.find_by(id: session[:organization_id])
+  end
 
   def set_post
     @post = Post.find(params[:id]) 

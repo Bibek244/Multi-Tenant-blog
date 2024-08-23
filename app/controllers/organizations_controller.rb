@@ -5,6 +5,7 @@ class OrganizationsController < ApplicationController
   helper_method :authorize_su?
 
   def index
+    redirect_to new_profile_path(current_user) if current_user.profile.nil?
     @organizations = current_user.organizations
   end
 
