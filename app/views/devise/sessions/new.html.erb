@@ -20,6 +20,7 @@
   <div class="form-items">
     <%= f.label :organization_id, "Ogranziation" %>
     <select name="organization_id", class = "input-tag">
+      <option > fleetpanda </option>
       <% Organization.all.each do |org|%>
         <option value=<%=org.id%> ><%=org.name%></option>
       <%end%>

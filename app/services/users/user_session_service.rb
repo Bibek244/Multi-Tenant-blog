@@ -33,7 +33,12 @@ module Users
               @success = true
               @user = user
             else
-              raise StandardError.new("You do not belong to the selected organization.")
+              if user.is_su
+                @success = true
+                @user = user
+              else
+                raise StandardError.new("You do not belong to the selected organization.")
+              end
             end
           else
             raise StandardError.new("Invalid email, password, or organization.")
